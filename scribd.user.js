@@ -4,10 +4,10 @@
 // @version      2.1
 // @description  Adds a toggle button to open/close the Scribd Downloader tool, restricted to document pages.
 // @author       You
-// @match        https://www.scribd.com/doc/*
-// @match        https://www.scribd.com/document/*
-// @match        https://www.scribd.com/presentation/*
-// @match        https://www.scribd.com/embeds/*/content*
+// @match        https://id.scribd.com/doc/*
+// @match        https://id.scribd.com/document/*
+// @match        https://id.scribd.com/presentation/*
+// @match        https://id.scribd.com/embeds/*/content*
 // @grant        none
 // ==/UserScript==
 
@@ -133,7 +133,7 @@
         function goToContentMode() {
             const docId = getDocumentId();
             if (docId) {
-                const embedUrl = `https://www.scribd.com/embeds/${docId}/content`;
+                const embedUrl = `https://id.scribd.com/embeds/${docId}/content`;
                 window.location.href = embedUrl;
             } else {
                 alert('Could not detect document ID from URL.');
